@@ -1,0 +1,35 @@
+.row {
+  max-width: $grid-width;
+  background-color: #eee;
+  margin: 0 auto;
+  margin-bottom: $gutter-vertical;
+  &:not(:last-child) {
+    //   最後の子要素を除く
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  // ^全てのcol-で始まるクラスを対象とする
+  // *全てのcol-を含むクラスを対象とする
+  // $全てのcol-で終わる含むクラスを対象とする
+  [class^="col-"] {
+    background-color: orangered;
+    float: left;
+    &:not(:last-child) {
+      //   最後の子要素を除く
+      margin-right: $gutter-horizon;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizon}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizon}) / 3);
+  }
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$gutter-horizon}) / 3) + #{$gutter-horizon});
+  }
+}
