@@ -14,7 +14,6 @@
   // *全てのcol-を含むクラスを対象とする
   // $全てのcol-で終わる含むクラスを対象とする
   [class^="col-"] {
-    background-color: orangered;
     float: left;
     &:not(:last-child) {
       //   最後の子要素を除く
