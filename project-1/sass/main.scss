@@ -2,6 +2,10 @@ $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
+$color-grey: #777;
+$color-white: #fff;
+$color-black: #000;
+
 *,
 *::after,
 *::before {
@@ -21,7 +25,7 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
+  color: $color-grey;
   padding: 30px;
 }
 
@@ -60,7 +64,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 3rem;
@@ -119,8 +123,8 @@ body {
 }
 
 .btn-white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-grey;
 }
 
 /* 擬似要素にスタイルを当てる */
@@ -138,7 +142,7 @@ body {
 }
 
 .btn-white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {

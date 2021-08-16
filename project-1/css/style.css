@@ -4,13 +4,11 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 /* 1rem = root font-size in this case, 10px */
 html {
-  font-size: 10px;
-}
+  font-size: 10px; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -18,50 +16,39 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
-}
+  padding: 30px; }
 
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   /* 画像をいい感じにしてくれる */
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* https://developer.mozilla.org/ja/docs/Web/CSS/clip-path */
-  /* clip-pathをうまく使う: https://bennettfeely.com/clippy/ */
-}
+  /* clip-pathをうまく使う: https://bennettfeely.com/clippy/ */ }
 
 .logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem;
-}
+  left: 4rem; }
 
 .logo {
-  height: 3.5rem;
-}
+  height: 3.5rem; }
 
 .text-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-}
+  text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 3rem;
-}
+  margin-bottom: 3rem; }
 
 .heading-primary-main {
   display: block;
@@ -77,8 +64,7 @@ body {
   /* 3回実行 */
   /* animation-iteration-count: 3; */
   /* どんなアクションをするか定義 */
-  /* animation-timing-function: ease-in-out; */
-}
+  /* animation-timing-function: ease-in-out; */ }
 
 .heading-primary-sub {
   display: block;
@@ -89,8 +75,7 @@ body {
   /* animation-name: moveInRight; */
   /* 何秒で終了するか定義 */
   /* animation-duration: 5s; */
-  animation: moveInRight 5s ease-in-out;
-}
+  animation: moveInRight 5s ease-in-out; }
 
 .btn:link,
 .btn:visited {
@@ -100,25 +85,21 @@ body {
   display: inline-block;
   border-radius: 10rem;
   transition: all 0.2s;
-  position: relative;
-}
+  position: relative; }
 
 /* ボタンにカーソルが乗った時 */
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
 
 /* ボタンを押した時の下がる動き */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
 .btn-white {
   background-color: #fff;
-  color: #777;
-}
+  color: #777; }
 
 /* 擬似要素にスタイルを当てる */
 .btn::after {
@@ -132,22 +113,18 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s;
-}
+  transition: all 0.4s; }
 
 .btn-white::after {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+  opacity: 0; }
 
 .btn-animate {
   animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
-}
+  animation-fill-mode: backwards; }
 
 /* =========== @keyframes ============ */
 /*
@@ -156,40 +133,29 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
-  }
+    transform: translateX(-100px); }
   80% {
-    transform: translateX(10px);
-  }
+    transform: translateX(10px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
-  }
+    transform: translateX(100px); }
   80% {
-    transform: translateX(-10px);
-  }
+    transform: translateX(-10px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
-  }
+    transform: translateY(30px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 /* =========== @keyframes ============ */
