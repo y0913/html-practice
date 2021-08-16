@@ -1,4 +1,37 @@
 @charset "UTF-8";
+/* =========== @keyframes ============ */
+/*
+* 0%〜100%の間での動きを決める
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* =========== @keyframes ============ */
 *,
 *::after,
 *::before {
@@ -8,7 +41,11 @@
 
 /* 1rem = root font-size in this case, 10px */
 html {
+  /* 1remの大きさ */
   font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -17,29 +54,6 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 30px; }
-
-.header {
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  /* 画像をいい感じにしてくれる */
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* https://developer.mozilla.org/ja/docs/Web/CSS/clip-path */
-  /* clip-pathをうまく使う: https://bennettfeely.com/clippy/ */ }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -71,6 +85,29 @@ body {
     /* 何秒で終了するか定義 */
     /* animation-duration: 5s; */
     animation: moveInRight 5s ease-in-out; }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  /* 画像をいい感じにしてくれる */
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* https://developer.mozilla.org/ja/docs/Web/CSS/clip-path */
+  /* clip-pathをうまく使う: https://bennettfeely.com/clippy/ */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .btn {
   /* ボタンにカーソルが乗った時 */
@@ -114,37 +151,3 @@ body {
   .btn-animate {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; }
-
-/* =========== @keyframes ============ */
-/*
-* 0%〜100%の間での動きを決める
-*/
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px); }
-  80% {
-    transform: translateX(10px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px); }
-  80% {
-    transform: translateX(-10px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-/* =========== @keyframes ============ */

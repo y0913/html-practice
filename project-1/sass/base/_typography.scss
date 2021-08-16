@@ -1,0 +1,44 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey;
+  padding: 30px;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 3rem;
+
+  &--main {
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    /* 使用するアニメーションを呼び出す */
+    animation-name: moveInLeft;
+    /* 何秒で終了するか定義 */
+    animation-duration: 5s;
+    /* アニメーションの発生を遅らせる */
+    /* animation-delay: 3s; */
+    /* 3回実行 */
+    /* animation-iteration-count: 3; */
+    /* どんなアクションをするか定義 */
+    /* animation-timing-function: ease-in-out; */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    /* 使用するアニメーションを呼び出す */
+    /* animation-name: moveInRight; */
+    /* 何秒で終了するか定義 */
+    /* animation-duration: 5s; */
+    animation: moveInRight 5s ease-in-out;
+  }
+}
