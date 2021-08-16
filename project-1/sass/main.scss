@@ -43,24 +43,23 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* https://developer.mozilla.org/ja/docs/Web/CSS/clip-path */
   /* clip-pathをうまく使う: https://bennettfeely.com/clippy/ */
-}
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 
-.logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo {
+    height: 3.5rem;
+  }
 
-.logo {
-  height: 3.5rem;
-}
-
-.text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  &__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primary {
@@ -68,91 +67,92 @@ body {
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 3rem;
+
+  &--main {
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    /* 使用するアニメーションを呼び出す */
+    animation-name: moveInLeft;
+    /* 何秒で終了するか定義 */
+    animation-duration: 5s;
+    /* アニメーションの発生を遅らせる */
+    /* animation-delay: 3s; */
+    /* 3回実行 */
+    /* animation-iteration-count: 3; */
+    /* どんなアクションをするか定義 */
+    /* animation-timing-function: ease-in-out; */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    /* 使用するアニメーションを呼び出す */
+    /* animation-name: moveInRight; */
+    /* 何秒で終了するか定義 */
+    /* animation-duration: 5s; */
+    animation: moveInRight 5s ease-in-out;
+  }
 }
 
-.heading-primary-main {
-  display: block;
-  font-size: 40px;
-  font-weight: 400;
-  letter-spacing: 10px;
-  /* 使用するアニメーションを呼び出す */
-  animation-name: moveInLeft;
-  /* 何秒で終了するか定義 */
-  animation-duration: 5s;
-  /* アニメーションの発生を遅らせる */
-  /* animation-delay: 3s; */
-  /* 3回実行 */
-  /* animation-iteration-count: 3; */
-  /* どんなアクションをするか定義 */
-  /* animation-timing-function: ease-in-out; */
-}
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
 
-.heading-primary-sub {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 1.5rem;
-  /* 使用するアニメーションを呼び出す */
-  /* animation-name: moveInRight; */
-  /* 何秒で終了するか定義 */
-  /* animation-duration: 5s; */
-  animation: moveInRight 5s ease-in-out;
-}
+  /* ボタンにカーソルが乗った時 */
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-}
+  /* ボタンを押した時の下がる動き */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black, 0.2);
+  }
 
-/* ボタンにカーソルが乗った時 */
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px $color-black;
-}
+  &-white {
+    background-color: $color-white;
+    color: $color-grey;
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-/* ボタンを押した時の下がる動き */
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px $color-black;
-}
+  /* 擬似要素にスタイルを当てる */
+  &::after {
+    content: ""; /* 必須項目 */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 
-.btn-white {
-  background-color: $color-white;
-  color: $color-grey;
-}
-
-/* 擬似要素にスタイルを当てる */
-.btn::after {
-  content: ""; /* 必須項目 */
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn-white::after {
-  background-color: $color-white;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn-animate {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
+  &-animate {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }
 
 /* =========== @keyframes ============ */
