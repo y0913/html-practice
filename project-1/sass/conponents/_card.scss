@@ -13,15 +13,24 @@
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     // 初期画面フロント
     &--front {
       background-color: orange;
     }
 
-    // カードが回転した時、面となる
+    // カードが回転した時、表面となる
     &--back {
-      background-color: green;
       transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
     }
   }
   // カードがひっくり返る動き
