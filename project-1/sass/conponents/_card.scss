@@ -1,0 +1,36 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  &__side {
+    background-color: orange;
+    color: white;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    // 初期画面フロント
+    &--front {
+      background-color: orange;
+    }
+
+    // カードが回転した時、面となる
+    &--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+  }
+  // カードがひっくり返る動き
+  // .card:hoverと.card__sideで
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
