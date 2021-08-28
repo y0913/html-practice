@@ -256,6 +256,21 @@ body {
   .btn-inline:focus {
     outline: none; }
 
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: 1px solid var(--color-grey-light-2); }
+
+.description {
+  background-color: orange;
+  flex: 0 0 60%;
+  margin-right: 4.5rem; }
+
+.user-reviews {
+  background-color: yellowgreen;
+  flex: 1; }
+
 @keyframes pulse {
   0% {
     transform: scale(1);
