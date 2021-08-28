@@ -171,3 +171,55 @@
   text-align: center;
   padding: 2.5rem;
 }
+
+/////////////////////////
+// GALLERY
+.gallery {
+  display: flex;
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+/////////////////////////
+// HOTEL OVERVIEW
+
+.overview {
+  display: flex;
+  // justify-content: space-between; // 今回は使わない
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    // flex: 1;
+    margin-right: auto; // flex-boxを使う際、特定の部分のみを右よせ/左寄せできる
+    display: flex;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+  }
+
+  &__rating {
+  }
+
+  &__rating-average {
+  }
+
+  &__rating-count {
+  }
+}
